@@ -1,8 +1,14 @@
 doctype html
-html
+html(ng-app = 'library')
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+    link(rel='stylesheet', href='angular-material/angular-material.min.css')
+    script(src='jquery/dist/jquery.js')
+    script(src='angular/angular.min.js')
+    script(src='angular-material/angular-material.js')
+    script(src='angular-scripts/library.js')
+    script(src='angular-animate/angular-animate.min.js')
+    script(src='angular-aria/angular-aria.min.js')
   body
     block content
