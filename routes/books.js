@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
     if (err) {
         res.send('error in database');
     }else{
-        res.render('book', { title: 'List of All Books',
+        res.send({ title: 'List of All Books',
                          books:results});
     }
   })

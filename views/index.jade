@@ -3,10 +3,6 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
-  md-button#getAllBooks(class='md-raised md-primary' onClick='getAllBooks()') Get All Books
-
-
-  script(type='text/javascript').
-     function getAllBooks(){
-       $(location).attr('href','/books');
-     };
+  div(ng-controller='BookCtrl')
+   md-button#getAllBooks(class='md-raised md-primary' ng-click='getAllBooks()') Get All Books
+  div(ng-view)
