@@ -1,4 +1,4 @@
-angular.module('library').controller('BookCtrl',['$scope', '$location', 'Book', 'bookService', '$mdSidenav', '$mdUtil', function($scope, $location, Book, bookService, $mdSidenav, $mdUtil) {
+angular.module('library').controller('BookCtrl',['$scope', 'Book', 'bookService', function($scope, Book, bookService) {
 
      Book.get(function(data){
          bookService.init(data);
