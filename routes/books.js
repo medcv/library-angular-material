@@ -12,7 +12,6 @@ router.get('/', function(req, res, next) {
                          books:results});
     }
   })
-
 });
 
 module.exports = router;
