@@ -1,7 +1,6 @@
-angular.module('library').controller('AuthorCtrl',['$scope', '$location', 'Author', 'authorService', function($scope, $location, Author, authorService) {
+angular.module('library').controller('AuthorCtrl',['$scope', 'Author', 'authorService', function($scope, Author, authorService) {
 
      Author.get(function(data){
-     debugger;
          authorService.init(data);
          $scope.authors=data.authors;
      });
