@@ -9,23 +9,10 @@ angular.module('library', ['ngMaterial', 'ngRoute', 'ngResource'])
 	$routeProvider.when('/books', {
 		templateUrl : 'angular-views/book.html'
 	});
+	$routeProvider.when('/authors', {
+		templateUrl : 'angular-views/author.html'
+	});
+	$routeProvider.when('/publishers', {
+		templateUrl : 'angular-views/publisher.html'
+	});
 })
-.controller('BookCtrl',['$scope', '$location', 'Book', 'bookService', function($scope, $location, Book, bookService) {
-    $scope.books = bookService.getValues();
-    $scope.getAllBooks = function(){
-      Book.get(function(data){
-      bookService.init(data);
-      $location.url('/books');
-     });
-    };
-
-    $scope.getBookDetails = function(id, $event){
-     console.log(id);
-    };
-
-
-}]).factory('Book', ['$resource', function($resource){
-             return $resource('/books', null, {
-               'query': { method:'GET', isArray: true }
-             });
-           }]);

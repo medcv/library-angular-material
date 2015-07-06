@@ -1,8 +1,28 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  div(ng-controller='BookCtrl')
-   md-button#getAllBooks(class='md-raised md-primary' ng-click='getAllBooks()') Get All Books
-  div(ng-view)
+   div(ng-controller='SideNavCtrl' layout="row")
+    div
+     md-sidenav(class="md-sidenav-left site-sidenav" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')")
+      md-toolbar(class="md-theme-indigo")
+       h1(class="md-toolbar-tools") Options
+      md-content
+       md-list
+        md-list-item(class="md-3-line" ng-click='getAllBooks()')
+         div(class="md-list-item-text")
+          h3 Books
+       md-list-item(class="md-3-line" ng-click='getAllAuthors()')
+         div(class="md-list-item-text")
+          h3 Authors
+       md-list-item(class="md-3-line" ng-click='getAllPublishers()')
+         div(class="md-list-item-text")
+          h3 Publishers
+       md-list-item(class="md-3-line" ng-click='closeSideNav()' hide-gt-md)
+         div(class="md-list-item-text")
+          h3 Close
+    div(layout-padding)
+     h1= title
+      p Welcome to #{title}
+      div
+       md-button(ng-click="toggleLeft()" class="md-primary" hide-gt-md) Menu
+     div(ng-view)

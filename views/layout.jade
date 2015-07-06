@@ -13,7 +13,12 @@ html(ng-app = 'library')
     script(src='angular-resource/angular-resource.js')
 
     script(src='angular-scripts/library.js')
-    script(src='angular-scripts/BookService.js')
-
-  body
+    script(src='angular-scripts/SideNavCtrl.js')
+    script(src='angular-scripts/Book/BookService.js')
+    script(src='angular-scripts/Book/BookCtrl.js')
+    script(src='angular-scripts/Book/Book.js')
+    script(src='angular-scripts/Author/AuthorService.js')
+    script(src='angular-scripts/Author/AuthorCtrl.js')
+    script(src='angular-scripts/Author/Author.js')
+  body(layout-padding)
     block content
